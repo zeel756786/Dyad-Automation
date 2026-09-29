@@ -1,0 +1,29 @@
+[  -56068ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/SyncSession.asp:0
+[  -56068ms] [WARNING] [syncsession] aspClassic responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -56062ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/Application/SyncSession.ashx:0
+[  -56062ms] [WARNING] [syncsession] applicationWebsite responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -55341ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/CRM/SyncSession.ashx:0
+[  -55341ms] [WARNING] [syncsession] crm responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -55319ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/SyncSession.ashx:0
+[  -55319ms] [WARNING] [syncsession] nexsureWebsite responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -55317ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/OI/SyncSession.ashx:0
+[  -55317ms] [WARNING] [syncsession] oi responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -54446ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ https://jmiqaweb01.nexsure.com/nexui/#/:0
+[  -50651ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/SyncSession.asp:0
+[  -50650ms] [WARNING] [syncsession] aspClassic responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -49575ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/OI/SyncSession.ashx:0
+[  -49574ms] [WARNING] [syncsession] oi responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -47473ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ https://jmiqaweb01.nexsure.com/nexui/null/Scripts/jquery.signalR-2.2.0.min.js:0
+[  -47473ms] [ERROR] Refused to execute script from 'https://jmiqaweb01.nexsure.com/nexui/null/Scripts/jquery.signalR-2.2.0.min.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled. @ https://jmiqaweb01.nexsure.com/nexui/#/opportunities:0
+[  -47221ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/SyncSession.asp:0
+[  -47221ms] [WARNING] [syncsession] aspClassic responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -47220ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/OI/SyncSession.ashx:0
+[  -47220ms] [WARNING] [syncsession] oi responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -45027ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/SyncSession.asp:0
+[  -45027ms] [WARNING] [syncsession] aspClassic responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -45025ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/OI/SyncSession.ashx:0
+[  -45025ms] [WARNING] [syncsession] oi responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -36735ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/SyncSession.asp:0
+[  -36735ms] [WARNING] [syncsession] aspClassic responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63
+[  -36734ms] [ERROR] Failed to load resource: the server responded with a status of 401 (Unauthorized) @ https://jmiqaweb01.nexsure.com/OI/SyncSession.ashx:0
+[  -36734ms] [WARNING] [syncsession] oi responded 401 @ https://jmiqaweb01.nexsure.com/nexui/assets/index-OVTGW6GK.js:63

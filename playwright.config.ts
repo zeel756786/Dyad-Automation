@@ -8,9 +8,10 @@ import { defineConfig, devices } from '@playwright/test';
  * product —
  *   alis/tests/<feature>/<feature>.test.ts
  *   nexsure/tests/<feature>/<feature>.test.ts
- * Run one product with `--project=alis` / `--project=nexsure`, or everything with
- * no --project flag. Tag a spec's title with `@smoke` and filter with
- * `--grep @smoke` for a critical-path-only run across every product.
+ *   alis_core/tests/<feature>/<feature>.test.ts
+ * Run one product with `--project=alis` / `--project=nexsure` / `--project=alis_core`,
+ * or everything with no --project flag. Tag a spec's title with `@smoke` and filter
+ * with `--grep @smoke` for a critical-path-only run across every product.
  *
  * Sharding: Playwright doesn't expose a shard count in the config file itself — it's
  * a CLI flag, e.g.:
@@ -21,28 +22,41 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? undefined : undefined,
+  timeout: 60 * 1000,
 
   /* All execution artifacts (traces, screenshots, videos, reports) go under
    * /reports — gitignored, published as CI artifacts. */
   outputDir: './reports/test-results',
-  reporter: [
+  // reporter: [
+  //   ['html', { outputFolder: './reports/html', open: 'never' }],
+  //   ['json', { outputFile: './reports/results.json' }], // consumed by agents/triage-agent.ts
+  //   ['./framework/utils/reporting.ts'], // scenario-summary.{json,md} for traceability
+  //   [process.env.CI ? 'github' : 'list'],
+
+  // ],
+    reporter: [
     ['html', { outputFolder: './reports/html', open: 'never' }],
-    ['json', { outputFile: './reports/results.json' }], // consumed by agents/triage-agent.ts
-    ['./framework/utils/reporting.ts'], // scenario-summary.{json,md} for traceability
+    ['json', { outputFile: './reports/results.json' }],
+    ['./framework/utils/reporting.ts'],
+    ['./framework/reporters/client-step-reporter.ts'], // ← add this line
     [process.env.CI ? 'github' : 'list'],
   ],
 
   use: {
+    actionTimeout: 1000 * 1000,
+    navigationTimeout: 800 * 1000,
     /* Page Objects store relative paths (from their knowledge file's "## URL"
      * section) and navigate via BasePage.goto(), which resolves against this.
      * Point it at whichever product's base URL this run targets, e.g.
      * PLAYWRIGHT_BASE_URL="$NEXSURE_BASE_URL" npx playwright test --project=smoke */
-    baseURL: process.env.PLAYWRIGHT_BASE_URL,
+    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? 'https://jmiqaweb01.nexsure.com/nexui/',
     /* 'on' (not 'on-first-retry') so every test — passed or failed — gets a
      * trace viewable from the HTML report, not just ones that got retried. */
     trace: 'on',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
+    // Wait for stable page state
+    waitUntil: 'domcontentloaded',
   },
 
   projects: [
@@ -56,5 +70,11 @@ export default defineConfig({
       testDir: './nexsure/tests',
       use: { ...devices['Desktop Chrome'] },
     },
+    {
+      name: 'alis_core',
+      testDir: './alis_core/tests',
+      use: { ...devices['Desktop Chrome'] },
+    },
   ],
+  
 });

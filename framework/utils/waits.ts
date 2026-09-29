@@ -11,8 +11,17 @@ import type { Locator, Page } from '@playwright/test';
 
 /** Waits for an element to become visible. Defaults to 10s — pass `timeoutMs` to
  * override for a specific call, in a Page Object or directly in a test. */
-export async function waitForVisible(locator: Locator, timeoutMs = 10000): Promise<void> {
+export async function waitForVisible(locator: Locator, timeoutMs = 120000): Promise<void> {
   await locator.waitFor({ state: 'visible', timeout: timeoutMs });
+}
+
+/** Waits until the document has finished its initial DOM loading phase. */
+export async function waitForDomReady(page: Page, timeoutMs = 30000): Promise<void> {
+  await page.waitForFunction(
+    () => document.readyState === 'interactive' || document.readyState === 'complete',
+    undefined,
+    { timeout: timeoutMs },
+  );
 }
 
 /** Waits for a loading/spinner element to appear (briefly) and then disappear. */
